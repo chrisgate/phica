@@ -29,7 +29,16 @@ namespace Sport.Mobile.Shared
 			Title = "Welcome!";
 		}
 
-		async void NewGame(object sender, EventArgs e)
+	    protected override async void OnLoaded()
+	    {
+	        base.OnLoaded();
+
+	        await Task.Delay(App.DelaySpeed);
+	        await label1.ScaleTo(1, App.AnimationSpeed, Easing.SinIn);
+	        await buttonStack.ScaleTo(1, App.AnimationSpeed, Easing.SinIn);
+	    }
+
+        async void NewGame(object sender, EventArgs e)
 		{
 		    await Navigation.PushAsync(new NewGamePage());
         }
@@ -44,14 +53,6 @@ namespace Sport.Mobile.Shared
 	        await Navigation.PushAsync(new AboutPage());
 	    }
 
-        protected override async void OnLoaded()
-		{
-			base.OnLoaded();
-
-			await Task.Delay(App.DelaySpeed);
-			await label1.ScaleTo(1, App.AnimationSpeed, Easing.SinIn);
-			await buttonStack.ScaleTo(1, App.AnimationSpeed, Easing.SinIn);
-		}
 	}
 
 	public partial class WelcomeStartPageXaml : BaseContentPage<AuthenticationViewModel>

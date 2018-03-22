@@ -248,18 +248,6 @@ namespace Sport.Mobile.Shared
 			if(Navigation == null)
 				throw new Exception("Navigation is null so unable to show auth form");
 
-			var authPage = new AuthenticationPage();
-			await Navigation.PushModalAsync(authPage, true);
-
-			await Task.Delay(300);
-			var success = await authPage.AttemptToAuthenticateAthlete();
-
-			if(success && Navigation.ModalStack.Count > 0)
-			{
-				await Navigation.PopModalAsync();
-				return true;
-			}
-
 			return false;
 		}
 

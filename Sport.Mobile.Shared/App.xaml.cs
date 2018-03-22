@@ -4,8 +4,6 @@ using System.Diagnostics;
 using Microsoft.Azure.Mobile;
 using Microsoft.Azure.Mobile.Analytics;
 using Microsoft.Azure.Mobile.Crashes;
-using Microsoft.WindowsAzure.MobileServices;
-using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -135,12 +133,7 @@ namespace Sport.Mobile.Shared
 		void StartAuthenticationFlow()
 		{
 			//Create our entry page and add it to a NavigationPage, then apply a randomly assigned color theme
-			var page = new AthleteLeaguesPage(Instance.CurrentAthlete);
-			var navPage = new ThemedNavigationPage(page);
-			page.ApplyTheme(navPage);
-			MainPage = navPage;
-
-			page.EnsureUserAuthenticated();
+			//var page = new AthleteLeaguesPage(Instance.CurrentAthlete);
 		}
 
 		/// <summary>

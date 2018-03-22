@@ -13,7 +13,7 @@
 	<xfg:ContentPageGloss.BackgroundGradient>
         <xfg:Gradient Rotation="150">
             <xfg:GradientStep StepColor="#03A9F4" StepPercentage="0" />
-            <xfg:GradientStep StepColor="#03A9F4" StepPercentage="1" />
+            <xfg:GradientStep StepColor="#03A9F9" StepPercentage="1" />
         </xfg:Gradient>
     </xfg:ContentPageGloss.BackgroundGradient>
 
@@ -27,9 +27,6 @@
 			<StackLayout x:Name="buttonStack" Spacing="0" Grid.Row="2" VerticalOptions="End">
 				<ActivityIndicator IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" Color="White" HorizontalOptions="Center"
 					VerticalOptions="EndAndExpand" />
-
-				<Label Text="{Binding AuthenticationStatus, StringFormat='\{0\}...'}" IsVisible="{Binding IsBusy}"  FontSize="Medium"
-					XAlign="Center" YAlign="Center" VerticalOptions="EndAndExpand" HeightRequest="70" />
         
 				<local:SportButton x:Name="btnNewGame" Text="NEW GAME" VerticalOptions="EndAndExpand"
                            Style="{StaticResource wizardButton}" Clicked="NewGame" Margin="0, 0, 0, 15" />
